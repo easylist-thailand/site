@@ -1,0 +1,15 @@
+html {
+	font-size: 16px !important;
+
+	&, body, .ui {
+		font-family: 'Taviraj', serif !important;
+	}
+}
+footer {
+	text-align: center;
+}
+#repo-link {
+	a > span + span {
+		margin-left: 5px;
+	}
+}
