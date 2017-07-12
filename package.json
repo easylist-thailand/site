@@ -1,31 +1,25 @@
 {
   "name": "easylist-thailand.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "EasyList Thailand's Home Page.",
   "private": true,
   "dependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-octicon": "^2.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-gluons": "^2.0.1",
-    "eslint-plugin-react": "^6.10.3",
-    "node-sass": "^4.5.2",
-    "npm-run-all": "^4.0.2",
-    "react-scripts": "0.9.5",
-    "semantic-ui-css": "^2.2.10",
-    "semantic-ui-react": "^0.68.1"
+    "antd": "^2.12.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10"
   },
   "scripts": {
-    "build-css": "node-sass src/ -o src/",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-gluons": "^2.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.0.2"
   }
 }
