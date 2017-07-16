@@ -13,6 +13,7 @@
     "build-js": "node scripts/build.js",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
+    "pretest": "npm run build-css",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint ."
   },
