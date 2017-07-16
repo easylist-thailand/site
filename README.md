@@ -3,4 +3,6 @@
 
 This repository is Home Page for [EasyList Thailand](https://github.com/easylist-thailand/easylist-thailand).
 
+Made with [🐜 Ant Design](https://ant.design/).
+
 **Homepage:** https://easylist-thailand.github.io/
