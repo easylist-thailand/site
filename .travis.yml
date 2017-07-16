@@ -4,7 +4,7 @@ node_js:
 branches:
   only:
     - master
-before_deploy: yarn build
+before_deploy: npm run build
 deploy:
   provider: pages
   skip_cleanup: true

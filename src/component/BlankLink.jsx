@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 class BlankLink extends Component {
 	static get propTypes() {
 		return {
-			url: PropTypes.string.isRequired
+			href: PropTypes.string.isRequired
 		};
 	}
 	render() {
 		return (
-			<a href={this.props.url} target='_blank' rel='noopener noreferrer'>
+			<a href={this.props.href} target='_blank' rel='noopener noreferrer'>
 				{this.props.children}
 			</a>
 		);
