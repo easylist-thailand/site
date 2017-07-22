@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Button } from 'antd';
+import { Button } from 'antd';
 import PropTypes from 'prop-types';
 
 class ABPLink extends Component {
@@ -8,6 +8,11 @@ class ABPLink extends Component {
 			url: PropTypes.string.isRequired,
 			title: PropTypes.string
 		};
+	}
+	componentDidMount() {
+		this.link.addEventListener('click', e => {
+			e.preventDefault();
+		});
 	}
 	render() {
 		let url = encodeURIComponent(this.props.url);
@@ -21,9 +26,12 @@ class ABPLink extends Component {
 		let btn = <Button></Button>; // eslint-disable-line no-unused-vars
 
 		return (
-			<a className='ant-btn ant-btn-primary ant-btn-lg abp-link' href={subscribeUrl}>
-				<Icon type="file-add" />
-				<span>{this.props.children}</span>
+			<a
+				className='ant-btn ant-btn-primary ant-btn-lg abp-link'
+				href={subscribeUrl}
+				ref={link => this.link = link}
+			>
+				{this.props.children}
 			</a>
 		);
 	}
