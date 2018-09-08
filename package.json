@@ -1,100 +1,33 @@
 {
-  "name": "easylist-thailand.github.io",
-  "version": "2.0.0",
+  "name": "easylist-thailand-site",
+  "version": "3.0.0",
   "description": "EasyList Thailand's Home Page.",
   "private": true,
   "author": "Saran Tanpituckpong <sarunta@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://easylist-thailand.github.io/",
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "node scripts/start.js",
-    "build-js": "node scripts/build.js",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm-run-all build-css build-js",
-    "pretest": "npm run build-css",
-    "test": "node scripts/test.js --env=jsdom",
-    "lint": "eslint ."
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "antd": "^2.12.0",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-github-corners": "^0.2.1"
+    "buefy": "^0.6.7",
+    "clipboard-copy": "^2.0.0",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "babel-core": "6.25.0",
-    "babel-eslint": "7.2.3",
-    "babel-jest": "20.0.3",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-import": "^1.2.1",
-    "babel-preset-react-app": "^3.0.1",
-    "babel-runtime": "6.23.0",
-    "case-sensitive-paths-webpack-plugin": "2.1.1",
-    "chalk": "^2.0.1",
-    "css-loader": "0.28.4",
-    "dotenv": "4.0.0",
-    "eslint": "^4.2.0",
-    "eslint-config-gluons": "^2.0.2",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
-    "extract-text-webpack-plugin": "2.1.2",
-    "file-loader": "0.11.2",
-    "fs-extra": "^4.0.0",
-    "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
-    "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.0.2",
-    "object-assign": "4.1.1",
-    "postcss-flexbugs-fixes": "3.0.0",
-    "postcss-loader": "2.0.6",
-    "promise": "7.1.1",
-    "react-dev-utils": "^3.0.2",
-    "react-error-overlay": "^1.0.9",
-    "style-loader": "0.18.2",
-    "sw-precache-webpack-plugin": "0.11.3",
-    "url-loader": "0.5.9",
-    "webpack": "2.6.1",
-    "webpack-dev-server": "2.5.0",
-    "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "2.0.3"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx"
-    ]
+    "@vue/cli-plugin-typescript": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "browserslist-config-vue": "^1.0.3",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-xo": "^0.9.0",
+    "typescript": "^3.0.0",
+    "vue-cli-plugin-pug": "^1.0.5",
+    "vue-template-compiler": "^2.5.17"
   }
 }

@@ -1,0 +1,9 @@
+{
+	"extends": "tslint-xo",
+	"rules": {
+		"file-name-casing": false,
+		"no-import-side-effect": false,
+		"no-implicit-dependencies": false,
+		"object-curly-spacing": false
+	}
+}

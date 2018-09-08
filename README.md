@@ -1,8 +1,21 @@
-# EasyList Thailand
-[![Travis](https://img.shields.io/travis/easylist-thailand/site.svg?style=flat-square)](https://travis-ci.org/easylist-thailand/site)
+# easylist-thailand-site
 
-This repository is Home Page for [EasyList Thailand](https://github.com/easylist-thailand/easylist-thailand).
+## Project setup
+```
+yarn install
+```
 
-Made with [🐜 Ant Design](https://ant.design/).
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-**Homepage:** https://easylist-thailand.github.io/
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
