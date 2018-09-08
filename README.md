@@ -3,6 +3,26 @@
 
 This repository is Home Page for [EasyList Thailand](https://github.com/easylist-thailand/easylist-thailand).
 
-Made with [🐜 Ant Design](https://ant.design/).
+Made with [Buefy](https://buefy.github.io/).
 
 **Homepage:** https://easylist-thailand.github.io/
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn dev
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```

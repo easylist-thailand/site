@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "lts/*"
 branches:
   only:
     - master
@@ -10,7 +10,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   repo: easylist-thailand/easylist-thailand.github.io
-  local_dir: ./build
+  local_dir: ./dist
   target_branch: master
   on:
     branch: master
