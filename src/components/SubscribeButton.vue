@@ -1,10 +1,6 @@
 <template lang="pug">
 a.button.is-success.is-rounded(:href='fullUrl')
-	b-icon(
-		pack='fas'
-		icon='plus-circle'
-	)
-	span: slot
+	slot
 </template>
 
 <script lang="ts">

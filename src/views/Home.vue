@@ -61,7 +61,7 @@ export default class Home extends Vue {
 
 	async copySubscription() {
 		await copy(this.subscriptionUrl);
-		this.$toast.open('ลิงค์ไฟล์ Subscription ถูกคักลอกแล้ว');
+		this.$toast.open('ลิงค์ไฟล์ Subscription ถูกคัดลอกแล้ว');
 	}
 }
 </script>
