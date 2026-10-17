@@ -6,30 +6,25 @@
   "author": "Saran Tanpituckpong <sarunta@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://easylist-thailand.github.io/",
+  "type": "module",
+  "packageManager": "yarn@4.18.1",
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "cross-env NODE_ENV=production vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "npm run lint"
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
   },
+  "prettier": "@gluons/prettier-config",
   "dependencies": {
-    "buefy": "^0.6.7",
-    "clipboard-copy": "^2.0.0",
-    "vue": "^2.5.17",
-    "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0"
+    "vue": "^3.5.44"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
-    "browserslist-config-vue": "^1.0.3",
-    "cross-env": "^5.2.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "tslint": "^5.11.0",
-    "tslint-xo": "^0.9.0",
-    "typescript": "^3.0.0",
-    "vue-cli-plugin-pug": "^1.0.5",
-    "vue-template-compiler": "^2.5.17"
+    "@gluons/prettier-config": "^3.1.0",
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4",
+    "vue-tsc": "^3.3.13"
   }
 }
