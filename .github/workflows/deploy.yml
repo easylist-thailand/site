@@ -23,13 +23,22 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 24
-          # v7+ understands the "packageManager" field and supports Yarn Berry
-          # caching natively. Older versions (v4) shell out to the runner's
-          # global Yarn 1.x before Corepack is enabled, which fails the job.
-          cache: yarn
+          # NOTE: the built-in `cache: yarn` is intentionally NOT used. It
+          # resolves the cache path by invoking the runner's global Yarn 1.x,
+          # which fails because package.json pins Yarn 4 via "packageManager"
+          # and Corepack isn't enabled yet at that point. Caching is handled
+          # explicitly below, after Corepack is enabled.
 
       - name: Enable Corepack
         run: corepack enable
+
+      - name: Restore Yarn cache
+        uses: actions/cache@v6
+        with:
+          # Yarn 4 with nodeLinker: node-modules uses the global zip cache.
+          path: ~/.yarn/berry/cache
+          key: yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: yarn-${{ runner.os }}-
 
       - name: Install dependencies
         run: yarn install --immutable
