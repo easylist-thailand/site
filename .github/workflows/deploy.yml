@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+# Allow one concurrent deployment, cancelling any in-progress run for the same ref.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to easylist-thailand.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # Private half of a deploy key that has write access to
+          # easylist-thailand/easylist-thailand.github.io.
+          deploy_key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
+          external_repository: easylist-thailand/easylist-thailand.github.io
+          # Required alongside deploy_key when targeting another repository.
+          ssh: true
+          publish_branch: master
+          publish_dir: ./dist
+          # peaceiris excludes Jekyll and writes .nojekyll automatically
+          # (enable_jekyll defaults to false).
