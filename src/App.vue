@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import Nav from './components/Nav.vue';
+import Home from './views/Home.vue';
+
+const repoLink = 'https://github.com/easylist-thailand/easylist-thailand';
 </script>
 
 <template>
-	<HelloWorld />
+	<Nav :repo-link="repoLink">EasyList Thailand</Nav>
+	<Home />
 </template>
