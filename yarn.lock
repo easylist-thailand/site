@@ -516,7 +516,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buefy@npm:^3":
+"buefy@npm:^3.1.0":
   version: 3.1.0
   resolution: "buefy@npm:3.1.0"
   dependencies:
@@ -573,7 +573,7 @@ __metadata:
     "@types/node": "npm:^24.19.2"
     "@vitejs/plugin-vue": "npm:^6.0.10"
     "@vue/tsconfig": "npm:^0.9.1"
-    buefy: "npm:^3"
+    buefy: "npm:^3.1.0"
     prettier: "npm:^3.9.10"
     sass: "npm:^1.105.2"
     typescript: "npm:~6.0.3"
