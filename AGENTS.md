@@ -35,11 +35,19 @@ There is no test or lint script yet.
   no `enum`, `namespace`, or constructor parameter properties. Use `import type` for
   type-only imports (`verbatimModuleSyntax` in the node config).
 - Prefer Composition API SFCs with `<script setup lang="ts">`.
+- Style with **SCSS**, not plain CSS — use `<style lang="scss">` in SFCs and keep a global
+  SCSS entry. Add the `sass` dev dependency as needed. This is what allows theming Buefy/Bulma
+  via Sass variables (e.g. the brand primary color) rather than overriding compiled CSS.
 
 ## UI & theming (Buefy + dark mode)
 
 - Use **Buefy** (v3+, which fully supports Vue 3 and requires Vue 3.4+) components instead of
   hand-rolled markup. See https://buefy.org/documentation/start for setup and component APIs.
+- Theme Buefy through its **SCSS/Sass integration**, overriding Bulma variables (colors,
+  typography, etc.) before the framework is imported — see
+  https://buefy.org/documentation/sass. This is the primary theming path (brand primary color
+  `#a333c8`, Taviraj/Courgette fonts, spacing). When using Sass customization, do **not** also
+  import Buefy's precompiled CSS.
 - **Dark mode is required.** `src/style.css` already uses CSS custom properties with a
   `prefers-color-scheme: dark` block — extend that token approach and theme Buefy/Bulma to
   match rather than hardcoding colors. Buefy's CSS variables and theme-switching support are
