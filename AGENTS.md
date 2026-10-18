@@ -38,12 +38,13 @@ There is no test or lint script yet.
 
 ## UI & theming (Buefy + dark mode)
 
-- Use **Buefy** components instead of hand-rolled markup. Buefy targets Vue 2 — confirm the
-  Vue 3-compatible package/version (e.g. the `buefy-next` fork) before installing, and follow
-  https://buefy.org/ for component APIs.
+- Use **Buefy** (v3+, which fully supports Vue 3 and requires Vue 3.4+) components instead of
+  hand-rolled markup. See https://buefy.org/documentation/start for setup and component APIs.
 - **Dark mode is required.** `src/style.css` already uses CSS custom properties with a
   `prefers-color-scheme: dark` block — extend that token approach and theme Buefy/Bulma to
-  match rather than hardcoding colors.
+  match rather than hardcoding colors. Buefy's CSS variables and theme-switching support are
+  the counterpart for component styling (https://buefy.org/documentation/css-variables,
+  https://buefy.org/documentation/theme-switching).
 - Brand primary color is `#a333c8`.
 - **Fonts:** use **Taviraj** (serif, Thai subset) as the primary/body family, and
   **Courgette** (cursive) for the site title in the navbar/brand.
