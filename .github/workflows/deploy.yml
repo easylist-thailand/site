@@ -51,10 +51,9 @@ jobs:
         with:
           # Private half of a deploy key that has write access to
           # easylist-thailand/easylist-thailand.github.io.
+          # (The action pushes over SSH whenever deploy_key is set.)
           deploy_key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
           external_repository: easylist-thailand/easylist-thailand.github.io
-          # Required alongside deploy_key when targeting another repository.
-          ssh: true
           publish_branch: master
           publish_dir: ./dist
           # peaceiris excludes Jekyll and writes .nojekyll automatically
