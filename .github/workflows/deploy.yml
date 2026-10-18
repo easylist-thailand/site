@@ -56,7 +56,5 @@ jobs:
           external_repository: easylist-thailand/easylist-thailand.github.io
           publish_branch: master
           publish_dir: ./dist
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
           # peaceiris excludes Jekyll and writes .nojekyll automatically
           # (enable_jekyll defaults to false).
