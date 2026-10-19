@@ -11,8 +11,11 @@ filter list and explains how to subscribe to it in Adblock Plus / uBlock Origin.
 
 ## Stack
 
-- **Vue 3** SFCs using `<script setup lang="ts">` (Composition API).
-- **Vite 8** tooling via `@vitejs/plugin-vue`.
+- **Vue 3** SFCs using `<script setup lang="ts">` (Composition API). For Vue APIs and
+  Composition API guidance, read the official docs at https://vuejs.org/ rather than relying
+  on memory.
+- **Vite 8** tooling via `@vitejs/plugin-vue`. For Vite config, plugins, and build options,
+  read the official docs at https://vite.dev/ rather than relying on memory.
 - **Yarn 4** (Berry, `nodeLinker: node-modules`). Use `yarn`, not `npm`.
 - **UI:** [Buefy](https://buefy.org/) (built on Bulma) — see *UI & theming* below.
 - Type-checking via `vue-tsc`.
