@@ -12,12 +12,12 @@ function setTheme(theme: Theme): void {
 	localStorage.setItem('theme', theme);
 	// Suppress transitions so the switch is instant, not a slow cross-fade
 	document.documentElement.classList.add('no-transition');
-	document.documentElement.setAttribute('data-theme', theme);
-	requestAnimationFrame(() =>
+	document.documentElement.dataset.theme = theme;
+	requestAnimationFrame(() => {
 		requestAnimationFrame(() => {
 			document.documentElement.classList.remove('no-transition');
-		})
-	);
+		});
+	});
 }
 
 function toggleTheme(): void {
@@ -28,12 +28,13 @@ if (import.meta.client) {
 	// Apply the persisted theme (if any) on load; otherwise Bulma follows the OS preference.
 	const storedTheme = localStorage.getItem('theme');
 	if (storedTheme === 'light' || storedTheme === 'dark') {
-		document.documentElement.setAttribute('data-theme', storedTheme);
+		document.documentElement.dataset.theme = storedTheme;
 	}
 
 	isLight.value =
 		storedTheme === 'light' ||
-		(!storedTheme && !window.matchMedia('(prefers-color-scheme: dark)').matches);
+		(storedTheme === null &&
+			!globalThis.matchMedia('(prefers-color-scheme: dark)').matches);
 }
 
 export function useTheme() {

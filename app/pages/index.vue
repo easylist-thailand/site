@@ -84,8 +84,8 @@ const abpIntro = 'Surf the web with no annoying ads.';
 const uBlockOriginIntro =
 	'A CPU and memory-efficient wide-spectrum content blocker.';
 
-// useToast() must run during setup (it uses inject()); only .open() is
-// triggered from the click handler, which never runs on the server.
+// The useToast() composable must run during setup (it uses inject()); only
+// .open() is triggered from the click handler, which never runs on the server.
 const toast = useToast();
 
 async function copySubscription() {

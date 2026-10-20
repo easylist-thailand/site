@@ -23,7 +23,10 @@ export default defineNuxtConfig({
 					content: 'รายการตัวกรอง EasyList สำหรับประเทศไทย'
 				},
 				{ property: 'og:type', content: 'website' },
-				{ property: 'og:url', content: 'https://easylist-thailand.github.io/' },
+				{
+					property: 'og:url',
+					content: 'https://easylist-thailand.github.io/'
+				},
 				{ property: 'og:locale', content: 'th_TH' }
 			],
 			link: [
@@ -42,6 +45,7 @@ export default defineNuxtConfig({
 			// wrong theme in the statically generated build.
 			script: [
 				{
+					// eslint-disable-next-line @typescript-eslint/naming-convention -- `innerHTML` is the property name required by Nuxt's head API
 					innerHTML: `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`
 				}
 			]

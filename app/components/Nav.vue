@@ -14,7 +14,9 @@
 						:icon-left="isLight ? 'moon' : 'sun'"
 						icon-pack="fas"
 						rounded
-						:aria-label="isLight ? 'สลับเป็นโหมดมืด' : 'สลับเป็นโหมดสว่าง'"
+						:aria-label="
+							isLight ? 'สลับเป็นโหมดมืด' : 'สลับเป็นโหมดสว่าง'
+						"
 						@click="toggleTheme"
 					/>
 				</ClientOnly>
