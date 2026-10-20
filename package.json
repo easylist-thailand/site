@@ -19,14 +19,17 @@
   },
   "prettier": "@gluons/prettier-config",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "buefy": "^3.1.0",
     "nuxt": "^4.6.2",
     "vue": "^3.5.44",
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
-    "@gluons/prettier-config": "^3.1.0",
+    "@gluons/prettier-config": "^3.1.1",
     "prettier": "^3.9.10",
-    "typescript": "^6",
+    "sass": "^1.105.2",
+    "typescript": "^6.0.3",
     "vue-tsc": "^3.3.13"
   }
 }
