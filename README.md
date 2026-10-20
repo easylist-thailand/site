@@ -1,22 +1,75 @@
-# EasyList Thailand
-This repository is Home Page for [EasyList Thailand](https://github.com/easylist-thailand/easylist-thailand).
+# Nuxt Minimal Starter
 
-Made with [Buefy](https://buefy.org/).
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-**Homepage:** https://easylist-thailand.github.io/
+## Setup
 
-## Project setup
-```
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
 yarn install
+
+# bun
+bun install
 ```
 
-### Compiles and hot-reloads for development
-```
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
 yarn dev
+
+# bun
+bun run dev
 ```
 
-### Compiles and minifies for production
-```
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
 yarn build
+
+# bun
+bun run build
 ```
 
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
