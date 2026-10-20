@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Build
-        run: yarn build
+      - name: Generate static site
+        run: yarn generate
 
       - name: Deploy to easylist-thailand.github.io
         uses: peaceiris/actions-gh-pages@v4
@@ -55,7 +55,7 @@ jobs:
           deploy_key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
           external_repository: easylist-thailand/easylist-thailand.github.io
           publish_branch: master
-          publish_dir: ./dist
+          publish_dir: ./.output/public
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           # peaceiris excludes Jekyll and writes .nojekyll automatically
