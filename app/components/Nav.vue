@@ -7,15 +7,17 @@
 		</template>
 		<template #end>
 			<b-navbar-item tag="div">
-				<b-button
-					:icon-left="isLight ? 'moon' : 'sun'"
-					icon-pack="fas"
-					rounded
-					:aria-label="
-						isLight ? 'สลับเป็นโหมดมืด' : 'สลับเป็นโหมดสว่าง'
-					"
-					@click="toggleTheme"
-				/>
+				<!-- ClientOnly: the server can't know the persisted/OS theme, so
+				     rendering the icon on the server would hydrate mismatched. -->
+				<ClientOnly>
+					<b-button
+						:icon-left="isLight ? 'moon' : 'sun'"
+						icon-pack="fas"
+						rounded
+						:aria-label="isLight ? 'สลับเป็นโหมดมืด' : 'สลับเป็นโหมดสว่าง'"
+						@click="toggleTheme"
+					/>
+				</ClientOnly>
 			</b-navbar-item>
 			<b-navbar-item :href="repoLink" target="_blank" rel="noopener">
 				<b-icon pack="fab" icon="github" size="is-medium" />

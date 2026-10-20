@@ -14,7 +14,10 @@
 			<div class="container">
 				<h1 class="title">การติดตั้ง</h1>
 				<div class="is-size-4">
-					<p>
+					<!-- A div, not a p: Buefy's b-tooltip renders a <div> root,
+					     which the HTML parser cannot nest inside a <p> (it would
+					     break SSR hydration). Keep the paragraph spacing via CSS. -->
+					<div class="install-line">
 						ติดตั้ง
 						<b-tooltip
 							:label="abpIntro"
@@ -40,7 +43,7 @@
 								>uBlock Origin</a
 							>
 						</b-tooltip>
-					</p>
+					</div>
 					<p>
 						จากนั้นก็เพิ่มไฟล์ Subscription
 						<a
@@ -72,8 +75,6 @@
 <script setup lang="ts">
 import { useToast } from 'buefy';
 
-import SubscribeButton from '../components/SubscribeButton.vue';
-
 const abpUrl = 'https://adblockplus.org/';
 const uBlockOriginUrl = 'https://github.com/gorhill/uBlock/#installation';
 const subscriptionUrl =
@@ -83,6 +84,8 @@ const abpIntro = 'Surf the web with no annoying ads.';
 const uBlockOriginIntro =
 	'A CPU and memory-efficient wide-spectrum content blocker.';
 
+// useToast() must run during setup (it uses inject()); only .open() is
+// triggered from the click handler, which never runs on the server.
 const toast = useToast();
 
 async function copySubscription() {
@@ -92,6 +95,11 @@ async function copySubscription() {
 </script>
 
 <style lang="scss" scoped>
+.install-line {
+	/* Match the user-agent paragraph margin the original <p> had. */
+	margin-block-end: 1em;
+}
+
 .subscription {
 	margin: 1em 0;
 }

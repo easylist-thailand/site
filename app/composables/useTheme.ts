@@ -2,12 +2,10 @@ import { ref } from 'vue';
 
 type Theme = 'light' | 'dark';
 
-// Module-level ref so all components share one reactive state
-const isLight = ref(
-	localStorage.getItem('theme') === 'light' ||
-		(!localStorage.getItem('theme') &&
-			!window.matchMedia('(prefers-color-scheme: dark)').matches)
-);
+// Module-level ref so all components share one reactive state.
+// SSR-safe: only touch browser APIs on the client (master's version did this at
+// module scope, which breaks `nuxt generate`).
+const isLight = ref(true);
 
 function setTheme(theme: Theme): void {
 	isLight.value = theme === 'light';
@@ -26,10 +24,16 @@ function toggleTheme(): void {
 	setTheme(isLight.value ? 'dark' : 'light');
 }
 
-// Apply the persisted theme (if any) on load; otherwise Bulma follows the OS preference.
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme === 'light' || storedTheme === 'dark') {
-	document.documentElement.setAttribute('data-theme', storedTheme);
+if (import.meta.client) {
+	// Apply the persisted theme (if any) on load; otherwise Bulma follows the OS preference.
+	const storedTheme = localStorage.getItem('theme');
+	if (storedTheme === 'light' || storedTheme === 'dark') {
+		document.documentElement.setAttribute('data-theme', storedTheme);
+	}
+
+	isLight.value =
+		storedTheme === 'light' ||
+		(!storedTheme && !window.matchMedia('(prefers-color-scheme: dark)').matches);
 }
 
 export function useTheme() {

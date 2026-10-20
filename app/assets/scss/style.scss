@@ -2,7 +2,7 @@
  * Global tokens & base styles.
  * Buefy/Bulma 1.x register their own CSS variables and switch themes via the
  * `data-theme` attribute on <html> (falling back to `prefers-color-scheme` when
- * no explicit theme is set — see src/scss/main.scss for the Sass-level theming).
+ * no explicit theme is set — see app/assets/scss/main.scss for the Sass-level theming).
  * This file keeps the site-level token approach on top of that.
  */
 :root {
